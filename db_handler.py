@@ -1,4 +1,5 @@
 from pymysql import connect
+from pymysql import cursors
 from pymysql.cursors import DictCursor
 
 db = connect(
@@ -10,3 +11,5 @@ db = connect(
     charset='utf8',
     cursorclass=DictCursor
 )
+
+cursor = db.cursors()
