@@ -12,4 +12,12 @@ db = connect(
     cursorclass=DictCursor
 )
 
-cursor = db.cursors()
+cursors = db.cursor()
+
+def get_user_list():
+    sql = f"SELECT * FROM users"
+    
+    cursors.execute(sql)
+    result = cursors.fetchall()
+    
+    return result
